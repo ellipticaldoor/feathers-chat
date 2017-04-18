@@ -8,7 +8,7 @@ import gravatar from '../../hooks/gravatar'
 const { authenticate } = auth
 const { hashPassword } = localAuth
 
-module.exports = {
+export default {
 	before: {
 		all: [],
 		find: [authenticate('jwt')],

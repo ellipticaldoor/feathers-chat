@@ -2,7 +2,7 @@ import authentication from 'feathers-authentication'
 import jwt from 'feathers-authentication-jwt'
 import local from 'feathers-authentication-local'
 
-module.exports = function() {
+export default function() {
 	const app = this
 	const config = app.get('authentication')
 

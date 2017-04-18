@@ -4,7 +4,7 @@ import createModel from '../../models/messages.model'
 import hooks from './messages.hooks'
 import filters from './messages.filters'
 
-module.exports = function() {
+export default function() {
 	const app = this
 	const Model = createModel(app)
 	const paginate = app.get('paginate')

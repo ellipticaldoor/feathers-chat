@@ -4,7 +4,7 @@ import createModel from '../../models/users.model'
 import hooks from './users.hooks'
 import filters from './users.filters'
 
-module.exports = function() {
+export default function() {
 	const app = this
 	const Model = createModel(app)
 	const paginate = app.get('paginate')

@@ -4,7 +4,7 @@ const { authenticate } = auth
 import processMessage from '../../hooks/process-message'
 import { populate } from 'feathers-hooks-common'
 
-module.exports = {
+export default {
 	before: {
 		all: [authenticate('jwt')],
 		find: [],

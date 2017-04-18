@@ -41,4 +41,4 @@ app.configure(services)
 app.configure(middleware)
 app.hooks(appHooks)
 
-module.exports = app
+export default app
