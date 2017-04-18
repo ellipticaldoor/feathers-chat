@@ -1,5 +1,5 @@
-const handler = require('feathers-errors/handler')
-const notFound = require('feathers-errors/not-found')
+import handler from 'feathers-errors/handler'
+import notFound from 'feathers-errors/not-found'
 
 module.exports = function() {
 	// Add your custom middleware here. Remember, that

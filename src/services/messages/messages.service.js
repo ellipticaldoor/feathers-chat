@@ -1,8 +1,8 @@
 // Initializes the `messages` service on path `/messages`
-const createService = require('feathers-nedb')
-const createModel = require('../../models/messages.model')
-const hooks = require('./messages.hooks')
-const filters = require('./messages.filters')
+import createService from 'feathers-nedb'
+import createModel from '../../models/messages.model'
+import hooks from './messages.hooks'
+import filters from './messages.filters'
 
 module.exports = function() {
 	const app = this
@@ -15,15 +15,13 @@ module.exports = function() {
 		paginate,
 	}
 
-  // Initialize our service with any options it requires
+	// Initialize our service with any options it requires
 	app.use('/messages', createService(options))
 
-  // Get our initialized service so that we can register hooks and filters
+	// Get our initialized service so that we can register hooks and filters
 	const service = app.service('messages')
 
 	service.hooks(hooks)
 
-	if (service.filter) {
-		service.filter(filters)
-	}
+	if (service.filter) service.filter(filters)
 }
