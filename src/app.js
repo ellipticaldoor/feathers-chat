@@ -1,26 +1,26 @@
-const path = require('path')
-const compress = require('compression')
-const cors = require('cors')
-const helmet = require('helmet')
-const bodyParser = require('body-parser')
+import path from 'path'
+import compress from 'compression'
+import cors from 'cors'
+import helmet from 'helmet'
+import bodyParser from 'body-parser'
 
-const feathers = require('feathers')
-const configuration = require('feathers-configuration')
-const hooks = require('feathers-hooks')
-const rest = require('feathers-rest')
-const socketio = require('feathers-socketio')
+import feathers from 'feathers'
+import configuration from 'feathers-configuration'
+import hooks from 'feathers-hooks'
+import rest from 'feathers-rest'
+import socketio from 'feathers-socketio'
 
-const middleware = require('./middleware')
-const services = require('./services')
-const appHooks = require('./app.hooks')
-
-const authentication = require('./authentication')
+import middleware from './middleware'
+import services from './services'
+import appHooks from './app.hooks'
+import authentication from './authentication'
 
 const app = feathers()
 
 // Load app configuration
 app.configure(configuration(path.join(__dirname, '..')))
-// Enable CORS, security, compression, favicon and body parsing
+
+// Enable CORS, security, compression and body parsing
 app.use(cors())
 app.use(helmet())
 app.use(compress())
@@ -36,6 +36,7 @@ app.configure(authentication)
 
 // Set up our services (see `services/index.js`)
 app.configure(services)
+
 // Configure middleware (see `middleware/index.js`) - always has to be last
 app.configure(middleware)
 app.hooks(appHooks)

@@ -1,8 +1,8 @@
 // Initializes the `users` service on path `/users`
-const createService = require('feathers-nedb')
-const createModel = require('../../models/users.model')
-const hooks = require('./users.hooks')
-const filters = require('./users.filters')
+import createService from 'feathers-nedb'
+import createModel from '../../models/users.model'
+import hooks from './users.hooks'
+import filters from './users.filters'
 
 module.exports = function() {
 	const app = this

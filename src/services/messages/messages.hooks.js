@@ -1,6 +1,8 @@
-const { authenticate } = require('feathers-authentication').hooks
-const { populate } = require('feathers-hooks-common')
-const processMessage = require('../../hooks/process-message')
+import { hooks as auth } from 'feathers-authentication'
+
+const { authenticate } = auth
+import processMessage from '../../hooks/process-message'
+import { populate } from 'feathers-hooks-common'
 
 module.exports = {
 	before: {

@@ -1,9 +1,9 @@
-const users = require('./users/users.service.js')
+import users from './users/users.service.js'
 
-const messages = require('./messages/messages.service.js')
+import messages from './messages/messages.service.js'
 
 module.exports = function() {
-	const app = this // eslint-disable-line no-unused-vars
+	const app = this
 
 	app.configure(users)
 	app.configure(messages)

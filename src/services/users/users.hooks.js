@@ -1,7 +1,12 @@
-const { authenticate } = require('feathers-authentication').hooks
-const { hashPassword } = require('feathers-authentication-local').hooks
-const commonHooks = require('feathers-hooks-common')
-const gravatar = require('../../hooks/gravatar')
+// const { authenticate } = require('feathers-authentication').hooks
+import { hooks as auth } from 'feathers-authentication'
+import { hooks as localAuth } from 'feathers-authentication-local'
+
+import commonHooks from 'feathers-hooks-common'
+import gravatar from '../../hooks/gravatar'
+
+const { authenticate } = auth
+const { hashPassword } = localAuth
 
 module.exports = {
 	before: {
